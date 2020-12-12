@@ -1,0 +1,81 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.mob.sdk'
+
+MobSDK {
+//    appKey "m2ef17a5dbd170"
+//    appSecret "60e66592c05c22b38436a273ca2109b8"
+//
+//    MobLink {
+//
+//        uriScheme "mlink://com.qilun.ql"
+//        appLinkHost "b5d4.t4m.cn"
+//    }
+//    appKey "2d7dc779618c8"
+//    appSecret "e641dfe4cdcc5bb9e3cde4519c899263"
+//
+//    MobLink {
+//        uriScheme "ssdk2d7dc779618c8://cn.sharesdk.loop"
+//        appLinkHost "avp9.t4m.cn"
+//    }
+
+    appKey "2fb2362640ccf"
+    appSecret "d2d16163c206903785de7aa225695d73"
+
+    MobLink {
+        uriScheme "ssdk2d7dc779618c8://cn.yuewmb.loop"
+        appLinkHost "bal9.t4m.cn"
+    }
+//    SMSSDK {
+//        // gui false
+//        // version "3.3.2"
+//    }
+//    appKey "2ee3ec7808b6c"
+//    appSecret "357408c8704f89aea93ba5da9463a51e"
+//
+//    MobLink {
+//        uriScheme "ssdk2ee3ec7808b6c://cn.sharesdk.loop"
+//        appLinkHost "b4zb.t4m.cn"
+//    }
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.example.yuewmb"
+//        applicationId "com.hugo.flutterhost"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation project(path: ':flutter')
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+}
