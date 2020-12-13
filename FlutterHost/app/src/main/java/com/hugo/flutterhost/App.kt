@@ -8,6 +8,7 @@ class App :Application() {
 
     override fun onCreate() {
         super.onCreate()
+        //MobSDK.init(this, "您的Mob-AppKey", "您的Mob-AppSecret")
         MobLink.setRestoreSceneListener(MoblinkPlugin2.SceneListener())
     }
 }
