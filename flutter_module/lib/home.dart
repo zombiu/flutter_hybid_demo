@@ -27,6 +27,8 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    //这里会进行调用，会触发 EventChannel#JAVA_TO_FLUTTER: Failed to open event stream 错误
+    //因为 _eventChannel监听还未注册
     Moblink.uploadPrivacyPermissionStatus(1, (bool success) {});
 
     // 是安卓系统，Android场景还原的实现
